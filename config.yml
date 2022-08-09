@@ -48,16 +48,16 @@ engine:                      # Engine settings.
       enabled: true
       min_time: 20
       max_pieces: 7
-      source: "lichess"      # One of "lichess", "chessdb".
+      source: "chessdb"      # One of "lichess", "chessdb".
       move_quality: "best"   # One of "good", "best".
 # engine_options:            # Any custom command line params to pass to the engine.
 #   cpuct: 3.1
   homemade_options:
 #   Hash: 256
   uci_options:               # Arbitrary UCI options passed to the engine.
-    Move Overhead: 300       # Increase if your bot flags games too often.
+    Move Overhead: 250       # Increase if your bot flags games too often.
     Ponder: true
-    Threads: 4               # Max CPU threads the engine can use.
+    Threads: 4              # Max CPU threads the engine can use.
     Hash: 256                # Max memory (in megabytes) the engine can allocate.
 #   go_commands:             # Additional options to pass to the UCI go command.
 #     nodes: 1               # Search so many nodes only.
@@ -112,7 +112,7 @@ challenge:                   # Incoming challenges.
     - blitz
     - rapid
     - classical
-#   - correspondence
+    - correspondence
   modes:                     # Game modes to accept.
     - casual                 # Unrated games.
     - rated                  # Rated games - must comment if the engine doesn't try to win.
