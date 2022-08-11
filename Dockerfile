@@ -8,9 +8,6 @@ COPY . .
 RUN apt update > aptud.log && apt install -y wget python3 python3-pip p7zip-full > apti.log
 RUN python3 -m pip install --no-cache-dir -r requirements.txt > pip.log
 
-RUN wget -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" --no-check-certificate "https://onedrive.live.com/download?cid=547CCA53C39C1EA1&resid=547CCA53C39C1EA1%21599&authkey=AMLXM4n_ZwOk7VQ" -O cubail.7z
-RUN 7zr e cubail.7z && rm cubail.7z
-
 RUN bash makefish.sh
 RUN chmod +x stockfish
 #Engine name ^^^^^^^^^^^^^^^^^^^
